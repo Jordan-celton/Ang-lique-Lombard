@@ -18,6 +18,8 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
     background-color: #2c3e50;
     /* Couleur plus sombre pour un meilleur contraste */
     padding: 20px;
@@ -96,7 +98,10 @@ nav ul li a:hover {
 
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 250px;
+    /* ou une hauteur adaptée à votre design */
+    object-fit: cover;
+    /* pour ajuster l'image tout en remplissant le conteneur */
     display: block;
 }
 
@@ -153,7 +158,7 @@ nav ul li a:hover {
 }
 
 .news-item {
-    background-color: white;
+    background-color: blanchedalmond;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #ddd;
@@ -246,6 +251,61 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+/* Formulaire */
+
+#contact {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+button:hover {
+    background-color: #16a085;
+}
+
 /* Footer */
 footer {
     margin-top: auto;
@@ -284,6 +344,10 @@ footer i {
 
 /* Styles responsifs pour la galerie et la navigation */
 @media (max-width: 768px) {
+    header{
+        display: flex;
+        flex-direction: column;
+    }
     .gallery-container {
         flex-direction: column;
         align-items: center;
@@ -291,6 +355,7 @@ footer i {
 
     .gallery-item {
         width: 80%;
+        width: calc(50% - 20px);
     }
 
     nav ul {
@@ -304,13 +369,6 @@ footer i {
     }
 }
 
-@media (max-width: 768px) {
-    .gallery-item {
-        width: calc(50% - 20px);
-        /* 2 cartes par ligne sur les petits écrans */
-    }
-}
-
 @media (max-width: 480px) {
     .gallery-item {
         width: calc(100% - 20px);
@@ -318,17 +376,35 @@ footer i {
     }
 }
 
-/* Styles responsifs pour la galerie */
+/* Responsive styles for smaller devices */
 @media (max-width: 768px) {
-    .gallery-item {
-        width: calc(50% - 30px);
-        /* 2 cartes par ligne sur les petits écrans */
+    form {
+        padding: 15px;
+    }
+
+    input,
+    textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 }
 
 @media (max-width: 480px) {
-    .gallery-item {
-        width: calc(100% - 30px);
-        /* 1 carte par ligne sur les très petits écrans */
+    #contact h2 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
     }
 }

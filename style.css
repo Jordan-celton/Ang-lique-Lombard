@@ -194,16 +194,21 @@ nav ul li a:hover {
 }
 
 /* Section À propos */
+.artist-image {
+    width: 300px;
+    height: 360px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    /* Marges par défaut */
+}
+
 #about {
     padding: 40px 20px;
     background-color: #ffffff;
-    text-align: center;
+    text-align: left;
     border: 2px solid #ddd;
-    /* Bordure autour de la section À propos */
     border-radius: 10px;
-    /* Coins arrondis pour un effet doux */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    /* Ombre plus marquée */
 }
 
 #about h2 {
@@ -215,40 +220,37 @@ nav ul li a:hover {
 .about-content {
     display: flex;
     flex-direction: column;
+    /* Empilement vertical sur les petits écrans */
     gap: 20px;
     align-items: center;
 }
 
-.about-bio,
-.about-education,
-.about-career {
+
+
+.about-bio {
     max-width: 800px;
     margin: 0 auto;
 }
 
-.about-bio h3,
-.about-education h3,
-.about-career h3 {
+.about-bio h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
+    color: #C5A073;
 }
 
-.about-bio p,
-.about-education ul,
-.about-career ul {
+.about-bio p {
     font-size: 1.1rem;
     color: #666;
 }
 
-.about-education ul,
-.about-career ul {
-    list-style: none;
-    padding: 0;
-}
-
-.about-education li,
-.about-career li {
-    margin-bottom: 10px;
+blockquote {
+    font-style: italic;
+    color: #8BC7B1;
+    margin: 20px 0;
+    padding: 10px;
+    border-left: 4px solid #C5A073;
+    background-color: #f9f9f9;
+    border-radius: 5px;
 }
 
 /* Formulaire */
@@ -342,19 +344,21 @@ footer i {
     font-size: 1.2rem;
 }
 
-/* Styles responsifs pour la galerie et la navigation */
+/* Styles responsifs pour appareils mobiles */
+
+/* Pour les écrans de 768px ou moins */
 @media (max-width: 768px) {
-    header{
+    header {
         display: flex;
         flex-direction: column;
     }
+
     .gallery-container {
         flex-direction: column;
         align-items: center;
     }
 
     .gallery-item {
-        width: 80%;
         width: calc(50% - 20px);
     }
 
@@ -367,17 +371,7 @@ footer i {
     nav ul li {
         margin-bottom: 10px;
     }
-}
 
-@media (max-width: 480px) {
-    .gallery-item {
-        width: calc(100% - 20px);
-        /* 1 carte par ligne sur les très petits écrans */
-    }
-}
-
-/* Responsive styles for smaller devices */
-@media (max-width: 768px) {
     form {
         padding: 15px;
     }
@@ -394,7 +388,13 @@ footer i {
     }
 }
 
+/* Pour les très petits écrans de 480px ou moins */
 @media (max-width: 480px) {
+    .gallery-item {
+        width: calc(100% - 20px);
+        /* 1 carte par ligne sur les très petits écrans */
+    }
+
     #contact h2 {
         font-size: 1.5rem;
     }
@@ -406,5 +406,20 @@ footer i {
     button {
         font-size: 0.9rem;
         padding: 6px 12px;
+    }
+}
+
+/* Pour les écrans de 768px ou plus */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        /* Aligner horizontalement sur les écrans larges */
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .artist-image {
+        margin-bottom: 0;
+        /* Supprimer la marge en bas lorsqu'elle est à côté du texte */
     }
 }
